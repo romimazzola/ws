@@ -6,7 +6,7 @@ getJSONData(PRODUCTS_URL).then(function (products){
     if(products.status === "ok"){
         productsArray = products.data;
     }
-}
+})
 });
 
 function showProductsList(array){
@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", function(e){
             showProductsList(array);
         }
         hideSpinner();
-    };
-};
+    })
+})
