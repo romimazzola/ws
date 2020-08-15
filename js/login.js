@@ -21,7 +21,7 @@ function showError(){
 }
 
 function Ingresar(){
-    if("correo & contraseña"){
+    if("correo" & "contraseña"){
         window.location = "eMercado.html";
     }else{
         showError();
