@@ -38,30 +38,32 @@
 </head>
 
 <body class="text-center">
-  <div class="container p-5">
-  <div class="card">
-    <div class="card-header">Inicio de sesión</div>
+     <div class="container">
+      <div class="card">
+       <div class="card-header">Inicio de sesión</div>
 
     <div class="card-body">
-       <form charset="UTF-8" role="form" name="login">
+       <form name="login">
          <div class="form-group">
            <input class="form-control" placeholder="Correo electrónico" name="correo" type="email" required>
          </div>
+
          <div class="form-group">
            <input class="form-control" placeholder="Contraseña" name="contraseña" type="password" value="" required>
          </div>
 
-         <div class="checkbox mt-2">
+         <div class="checkbox">
            <label><input name="recordar" type="checkbox" value="Recordar datos"> Recordar datos</label>
          </div>
-         <input class="btn btn-lg btn-successbtn-block" type="submit" value="Iniciar sesión">
+
+         <input class="submit" type="submit" value="Iniciar sesión">
        </form>
      </div>
-    </div>
   </div>
 </div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+
 </body>
 </html>

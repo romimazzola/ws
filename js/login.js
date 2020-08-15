@@ -1,18 +1,17 @@
-const errorMsg = document.getElementByI("login-error");
+const errorMsg = document.getElementById("login-error");
 
 document.forms["login"]. addEventListener("submit", checkDatos);
 
 function checkDatos(event){
     event.preventDefault()
     var correo = document.forms["login"]["correo"].value;
-    var password = document.forms["login"]["password"].value;
+    var password = document.forms["login"]["contraseña"].value;
 
     if(!correo || !password){
         showError();
     }else{
-         localStorage.setItem("correo", correo);
-         localStorage.setItem("logged", true);
-         window.location.replace("index.html");
+         sessionStorage.setItem("correo", correo);
+         sessionStorage.setItem("contraseña", password);
     }
 };
 
