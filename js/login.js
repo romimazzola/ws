@@ -5,7 +5,6 @@ document.forms["login"]. addEventListener("submit", checkDatos);
 function checkDatos(event){
     event.preventDefault()
     var correo = document.forms["login"]["correo"].value;
-    var password = document.forms["login"]["contraseña"].value;
 
     if(!correo || !password){
         showError();
