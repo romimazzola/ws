@@ -39,13 +39,28 @@
 
 <body class="text-center">
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) -> Punto 3 y 4.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="card">
+    <div class="card-header">Inicio de sesión</div>
+
+    <div class="card-body">
+       <form charset="UTF-8" role="form" name="login">
+         <div class="form-group">
+           <input class="form-control" placeholder="Correo electrónico" name="correo" type="emal">
+         </div>
+         <div class="form-group">
+           <input class="form-control" placeholder="Contraseña"name="contraseña" type="password" value="">
+         </div>
+
+         <div class="checkbox mt-2">
+           <label<input name="recordar" type="checkbox" value="Recordar datos"> Recordar datos</label>
+         </div>
+         <input class="btn btn-lg btn-successbtn-block" type="submit" value="Iniciar sesión">
+       </form>
+     </div>
     </div>
   </div>
+ </div>
+</div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
