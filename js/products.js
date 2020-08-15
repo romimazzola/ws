@@ -39,7 +39,7 @@ function showProductsList(array){
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-    showSppiner();
+    showSpinner();
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
