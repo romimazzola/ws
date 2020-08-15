@@ -6,7 +6,7 @@ function checkDatos(event){
     event.preventDefault()
     var correo = document.forms["login"]["correo"].value;
 
-    if(!correo || !password){
+    if(!correo || !contraseña){
         showError();
     }else{
          sessionStorage.setItem("correo", correo);
@@ -14,7 +14,7 @@ function checkDatos(event){
     }
 };
 
-//Defino función
+//Defino funciones
 function showError(){
     errorMsg.classList.add("alert", "alert-danger");
     errorMsg.innerHTML = "Complete los campos e ingrese sus datos correctamente.";
