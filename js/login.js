@@ -19,3 +19,11 @@ function showError(){
     errorMsg.classList.add("alert", "alert-danger");
     errorMsg.innerHTML = "Complete los campos e ingrese sus datos correctamente.";
 }
+
+function Ingresar(){
+    if("correo & contraseña"){
+        window.location = "eMercado.html";
+    }else{
+        showError();
+    }
+}
