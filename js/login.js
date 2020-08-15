@@ -5,12 +5,13 @@ document.forms["login"]. addEventListener("submit", checkDatos);
 function checkDatos(event){
     event.preventDefault()
     var correo = document.forms["login"]["correo"].value;
+    var contraseña = document.forms["login"]["contraseña"].value;
 
     if(!correo || !contraseña){
         showError();
     }else{
-         sessionStorage.setItem("correo", correo);
-         sessionStorage.setItem("contraseña", password);
+        sessionStorage.setItem("correo", correo);
+        window.location = "index.html";
     }
 };
 
@@ -18,12 +19,4 @@ function checkDatos(event){
 function showError(){
     errorMsg.classList.add("alert", "alert-danger");
     errorMsg.innerHTML = "Complete los campos e ingrese sus datos correctamente.";
-}
-
-function Ingresar(){
-    if("correo" & "contraseña"){
-        window.location = "eMercado.html";
-    }else{
-        showError();
-    }
 }
