@@ -5,6 +5,7 @@ let currentProductsArray = [];
 let minCount = undefined;
 let maxCount = undefined;
 
+//Ordenar y mostrar
 function sortAndShowProducts(sort){
     currentProductsArray = sortProducts(sort,currentProductsArray);
     showProductsList();
@@ -38,6 +39,7 @@ function sortProducts(criteria, array){
     return result;
 }
 
+//Función para mostrar lista de productos
 function showProductsList(){
 
     let htmlContentToAppend = "";
