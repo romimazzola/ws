@@ -19,7 +19,6 @@
       }
     </script>
   </head>
-  
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -28,9 +27,15 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div class="dropbown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><div id="perfil"></div></button>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" onclick="salir()">Cerrar sesión</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
-    <main role="main">
+  <main role="main">
       <section class="jumbotron text-center">
         <div class="m-5">
           <h1></h1>
@@ -111,5 +116,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
+    <script>document.getElementById("perfil").innerHTML=sessionStorage.getItem("correo");</script>
   </body>
 </html>
