@@ -48,7 +48,8 @@ function showProductsList(){
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount)))
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
+        <a href = "product-info.html"
+        class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` + product.imgSrc + `" class="img-thumbnail">
@@ -63,12 +64,13 @@ function showProductsList(){
                 ${product.description}
                 </div>
             </div>
-        </div>
+        </a>
         `
 
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", function(e){
     showSpinner();
@@ -81,6 +83,14 @@ document.addEventListener("DOMContentLoaded", function(e){
         hideSpinner();
     })
 })
+
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            showProductsInfo();
+        }
+    });
+    });
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCTS_URL).then(function(resultObj){
