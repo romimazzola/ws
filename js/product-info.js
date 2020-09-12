@@ -1,5 +1,6 @@
-var products = {};
+var product = {};
 
+//Función para mostrar imágenes
 function showImagesGallery(array){
 
     let htmlContentToAppend = "";
@@ -19,24 +20,61 @@ function showImagesGallery(array){
     }
 }
 
+//Función para mostrar comentarios
+function showComments(array){
+
+    let htmlContentToAppend = "";
+
+    for(let i = 0; i < array.length; i++){
+        let product = array[i];
+
+        htmlContentToAppend += `
+        <div class="card" style="width: 50ren;">
+        <div class="card-body">
+        <h5 class="card-title">Calificación: ` + product.score + `</h5>
+        <h5 class="card-title">` + product.user + `</h5>
+        <p class="card-text">` + product.description + `</p>
+        <small>Publicado el: ` + product.dateTime + `</small>
+        </div>
+        </div>
+        </br>
+        `
+
+        document.getElementById("commentsList").innerHTML = htmlContentToAppend;
+}
+}
+
+//Info del producto
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
-            products = resultObj.data;
+            product = resultObj.data;
 
-            let productsNameHTML  = document.getElementById("productsName");
-            let productsDescriptionHTML = document.getElementById("productsDescription");
-            let productsCostHTML = document.getElementById("productsCost");
-            let productsSoldCountHTML = document.getElementById("productssoldCount");
+            let productNameHTML  = document.getElementById("productName");
+            let productDescriptionHTML = document.getElementById("productDescription");
+            let productCostHTML = document.getElementById("productCost");
+            let productSoldCountHTML = document.getElementById("productsoldCount");
         
-            productsNameHTML.innerHTML = products.name;
-            productsDescriptionHTML.innerHTML = products.description;
-            productsCostHTML.innerHTML = products.currency + " " + products.cost;
-            productsSoldCountHTML.innerHTML = products.soldCount;
+            productNameHTML.innerHTML = product.name;
+            productDescriptionHTML.innerHTML = product.description;
+            productCostHTML.innerHTML = product.currency + " " + product.cost;
+            productSoldCountHTML.innerHTML = product.soldCount;
 
             //Muestro las imagenes
-            showImagesGallery(products.images);
+            showImagesGallery(product.images);
+        }
+    });
+});
+
+//Comentarios
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            comments = resultObj.data;
+
+            showComments(comments);
         }
     });
 });
