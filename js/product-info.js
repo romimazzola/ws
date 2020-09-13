@@ -1,4 +1,6 @@
 var product = {};
+var comments = {};
+
 
 //Función para mostrar imágenes
 function showImagesGallery(array){
@@ -42,6 +44,21 @@ function showComments(array){
 
         document.getElementById("commentsList").innerHTML = htmlContentToAppend;
 }
+}
+
+let comentario = {
+    "description": undefined,
+    "score": undefined,
+    "user": undefined,
+    "dateTime": undefined
+};
+//Función para agregar comentario
+function publicarComentario(comentario){
+
+    comments.push(comentario);
+
+    showComments(comments);
+
 }
 
 //Info del producto
