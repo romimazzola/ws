@@ -55,7 +55,7 @@ let comentario = {
 };
 //Función para agregar comentario
 function publicarComentario(comentario){
-comentario.user = sessionStorage.getItem("correo");
+comentario.user = sessionStorage.getItem("correo").value;
 comentario.description = document.getElementById("comentario").value;
     comments.push(comentario);
 
