@@ -1,9 +1,9 @@
 const errorMsg = document.getElementById("login-error");
 
-document.forms["login"]. addEventListener("submit", checkDatos);
+//document.forms["login"]. addEventListener("submit", checkDatos);
 
-function checkDatos(event){
-    event.preventDefault()
+function checkDatos(){
+    
     var correo = document.forms["login"]["correo"].value;
     var contraseña = document.forms["login"]["contraseña"].value;
 
@@ -25,5 +25,10 @@ function showError(){
 function salir() {
     localStorage.removeItem("correo");
     localStorage.removeItem("contraseña");
+}
+
+function entrar() {
+    checkDatos();
+    window.location = "index.html";
 }
 
