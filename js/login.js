@@ -10,7 +10,7 @@ function checkDatos(event){
     if(!correo || !contraseña){
         showError();
     }else{
-        sessionStorage.setItem("correo", correo);
+        localStorage.setItem("correo", correo);
         window.location = "index.html";
     }
 };

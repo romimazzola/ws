@@ -39,7 +39,6 @@ function showComments(array){
         <small>Publicado el: ` + product.dateTime + `</small>
         </div>
         </div>
-        <h5 class="card-title">Productos relacionados: ` + product.related + `</h5>
         </br>
         `
 
@@ -55,7 +54,7 @@ let comentario = {
 };
 //Función para agregar comentario
 function publicarComentario(comentario){
-comentario.user = sessionStorage.getItem("correo").value;
+comentario.user = localStorage.getItem("correo");
 comentario.description = document.getElementById("comentario").value;
     comments.push(comentario);
 
@@ -80,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productDescriptionHTML.innerHTML = product.description;
             productCostHTML.innerHTML = product.currency + " " + product.cost;
             productSoldCountHTML.innerHTML = product.soldCount;
-            relatedProductsHTML.innerHTML = product.related;
+            relatedProductsHTML.innerHTML = product.relatedProducts;
 
             //Muestro las imagenes
             showImagesGallery(product.images);
