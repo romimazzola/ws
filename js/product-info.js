@@ -25,13 +25,14 @@ function showComments(array){
 }
 }
 
+//Función para agregar comentario
 let comentario = {
     "description": undefined,
     "score": undefined,
     "user": undefined,
     "dateTime": undefined
 };
-//Función para agregar comentario
+
 function publicarComentario(comentario){
 comentario.user = localStorage.getItem("correo");
 comentario.description = document.getElementById("comentario").value;
