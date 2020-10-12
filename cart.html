@@ -52,14 +52,74 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <!--Artículos-->
+  <div class="container">
+    <div class="text-center p-4">
+      <h2>Mi carrito</h2>
     </div>
+  <table class="table table-striped table.bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Artículo</th>
+        <th scope="col">Precio por unidad</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Total a pagar</th>
+      </tr>
+    </thead>
+    <tbody id="articlesList"></tbody>
+  </table><br>
+<hr>
+<!--Tipo de envío-->
+  <div class="text-center p-4">
+    <h3>Método de envío</h3>
   </div>
+  <input type="radio" name="tipo" value="1"> Premium 2 a 5 días (15%)
+  <br>
+  <input type="radio" name="tipo" value="2"> Express 5 a 8 días (7%)
+  <br>
+  <input type="radio" name="tipo" value="3"> Standard 12 a 15 días (5%)
+  <br><br>
+  <hr>
+<!--Dirección-->
+<div class="text-center p-4">
+  <h3>Domicilio</h3>
+</div>
+  <form>
+    Calle <br><input type="text" name="calle" value=""><br><br>
+    Número <br><input type="number" name="número" value=""><br><br>
+    Esquina <br><input type="text" name="esquina" value="">
+  </form>
+  <hr>
+<!--Costos-->
+<div class="text-center p-4">
+  <h3>Costos</h3>
+</div>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>Subtotal<br><small>Costo unitario del producto por cantidad</small></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Costo de envío<br><small>Según el tipo de envío</small></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Total ($)</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr>
+<!--Forma de pago-->
+<div class="text-center p-4">
+  <h3>Forma de pago</h3>
+  <a href="formadepago.html">Seleccionar</a>  
+</div>
+<hr>
+<input type="submit" name="fin" class="btn btn-light" value="Finalizar compra">
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
