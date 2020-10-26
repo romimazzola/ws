@@ -74,21 +74,24 @@
   <div class="text-center p-4">
     <h3>Método de envío</h3>
   </div>
-  <input type="radio" name="tipo" value="1"> Premium 2 a 5 días (15%)
+  <form name="metodo">
+  <input type="radio" id="premium" name="tipo" value="1"> Premium 2 a 5 días (15%)
   <br>
-  <input type="radio" name="tipo" value="2"> Express 5 a 8 días (7%)
+  <input type="radio" id="express" name="tipo" value="2"> Express 5 a 8 días (7%)
   <br>
-  <input type="radio" name="tipo" value="3"> Standard 12 a 15 días (5%)
+  <input type="radio" id="standard" name="tipo" value="3"> Standard 12 a 15 días (5%)
+  </form>
   <br><br>
   <hr>
 <!--Dirección-->
 <div class="text-center p-4">
   <h3>Domicilio</h3>
+  <div id="domicilio"></div>
 </div>
-  <form>
-    Calle <br><input type="text" name="calle" value=""><br><br>
-    Número <br><input type="number" name="número" value=""><br><br>
-    Esquina <br><input type="text" name="esquina" value="">
+  <form name="domicilio">
+    Calle <br><input type="text" name="dom" value="" required><br><br>
+    Número <br><input type="number" name="dom" value="" required><br><br>
+    Esquina <br><input type="text" name="dom" value="" required>
   </form>
   <hr>
 <!--Costos-->
@@ -99,15 +102,15 @@
   <tbody>
     <tr>
       <td>Subtotal<br><small>Costo unitario del producto por cantidad</small></td>
-      <td></td>
+      <td><span id="hola"></span></td>
     </tr>
     <tr>
       <td>Costo de envío<br><small>Según el tipo de envío</small></td>
-      <td></td>
+      <td><span id="total"></span></td>
     </tr>
     <tr>
       <td>Total ($)</td>
-      <td></td>
+      <td><span id="pagoTotal"></span></td>
     </tr>
   </tbody>
 </table>
@@ -116,10 +119,44 @@
 <!--Forma de pago-->
 <div class="text-center p-4">
   <h3>Forma de pago</h3>
-  <a href="formadepago.html">Seleccionar</a>  
+
+  <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
+    Seleccionar
+  </button>
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Forma de pago</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="radio" id="credito" name="opcion" value=""> Tarjeta de crédito
+          <br><br>
+          <form name="forma">
+            Número de tarjeta <br><input type="number" name="for" value=""><br><br>
+            Código de seguridad <br><input type="number" name="for" value=""><br><br>
+            Fecha de vencimiento <br><input type="number" name="for" value="">
+          </form>
+          <hr>
+          <input type="radio" id="transferencia" name="opcion" value=""> Transferencia bancaria
+          <br><br>
+          Número de cuenta <br><input type="number" name="numero" value="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 <hr>
-<input type="submit" name="fin" class="btn btn-light" value="Finalizar compra">
+<input type="button" name="fin" class="btn btn-light" value="Finalizar compra" onclick="finalizarCompra()">
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

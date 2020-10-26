@@ -2,6 +2,7 @@ const errorMsg = document.getElementById("login-error");
 
 //document.forms["login"]. addEventListener("submit", checkDatos);
 
+//Defino funciones
 function checkDatos(){
     
     var correo = document.forms["login"]["correo"].value;
@@ -15,7 +16,6 @@ function checkDatos(){
     }
 };
 
-//Defino funciones
 function showError(){
     errorMsg.classList.add("alert", "alert-danger");
     errorMsg.innerHTML = "Complete los campos e ingrese sus datos correctamente.";
